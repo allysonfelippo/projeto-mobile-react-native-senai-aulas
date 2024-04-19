@@ -4,7 +4,8 @@ import { StyleSheet, View } from 'react-native';
 import TelaContador from './src/telas/TelaContador/TelaContador';
 import CORES from './src/comum/constantes/cores';
 import TELAS from './src/comum/constantes/telas';
-import TelaPrincipal from './src/TelaPrincipal/TelaPrincipal';
+import TelaPrincipal from './src/telas/TelaPrincipal/TelaPrincipal';
+
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
