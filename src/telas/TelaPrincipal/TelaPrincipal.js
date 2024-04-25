@@ -2,11 +2,15 @@ import BotaoCustomizado from "../../componentes/BotaoCustomizado/BotaoCustomizad
 import { View, Text } from 'react-native';
 import TELAS from "../../comum/constantes/telas";
 
+
 const TelaPrincipal = (props) => {
     return (
         <View>
-            <BotaoCustomizado onPress={() => props.navigation.navigate(TELAS.TELA_CONTADOR)}>
+            <BotaoCustomizado cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_CONTADOR)}>
                 <Text>Tela Contador</Text>
+            </BotaoCustomizado>
+            <BotaoCustomizado cor='secundaria' onPress={() => props.navigation.navigate(TELAS.TELA_FORMULARIO)}>
+                <Text>Tela Formulário</Text>
             </BotaoCustomizado>
         </View>
     )
