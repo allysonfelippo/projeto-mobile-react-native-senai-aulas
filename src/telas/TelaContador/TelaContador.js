@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import BotaoCustomizado from "../../componentes/BotaoCustomizado/BotaoCustomizado";
+import BotaoCustomizado from "../../comum/componentes/BotaoCustomizado/BotaoCustomizado";
 import CORES from '../../comum/constantes/cores';
 
 const estilos = StyleSheet.create({

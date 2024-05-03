@@ -1,8 +1,8 @@
 import { View } from "react-native";
-import CampoTextoCustomizado from "../../componentes/CampoTextoCustomizado/CampoTextoCustomizado";
+import CampoTextoCustomizado from "../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado";
 import estilos from "./TelaFormularioStyle";
 import React from "react";
-import BotaoCustomizado from '../../componentes/BotaoCustomizado/BotaoCustomizado'
+import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado'
 
 const TelaFormulario = () => {
     const [campoNome, setCampoNome] = React.useState('')

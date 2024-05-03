@@ -1,5 +1,5 @@
 import { Pressable, Text, StyleSheet } from "react-native";
-import CORES from "../../comum/constantes/cores";
+import CORES from "../../constantes/cores";
 
 
 const estilos = StyleSheet.create({

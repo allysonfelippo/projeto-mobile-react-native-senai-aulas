@@ -6,7 +6,7 @@ import CORES from './src/comum/constantes/cores';
 import TELAS from './src/comum/constantes/telas';
 import TelaPrincipal from './src/telas/TelaPrincipal/TelaPrincipal';
 import TelaFormulario from './src/telas/TelaFormulario/TelaFormulario';
-
+import TelaListaTarefas from './src/telas/TelaListaTarefas/TelaListaTarefas';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -32,6 +32,7 @@ export default function App() {
           />
           <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} options={{ title: 'Tela Contador' }} />
           <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} options={{ title: 'Tela Formulário' }} />
+          <Stack.Screen name={TELAS.TELA_LISTA} component={TelaListaTarefas} options={{ title: 'Lista de tarefas' }} />
         </Stack.Navigator>
       </NavigationContainer>
 
