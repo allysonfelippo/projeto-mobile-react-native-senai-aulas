@@ -5,8 +5,8 @@ const campoTextoCustomizadoStyle = StyleSheet.create({
     
     container: {
         flex: 1,
-        padding: 16,
-        gap: 16
+        width: '100%',
+        gap: 4
     },
     campoTexto: {
         borderWidth: 1,

@@ -4,8 +4,11 @@ import CORES from "../../constantes/cores";
 
 const estilos = StyleSheet.create({
     botao: {
-        padding: 16,
-        borderRadius: 8
+        height: 40,
+        minWidth: 40,
+        borderRadius: 8,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     botaoPrimario: {
         backgroundColor: CORES.PRIMARIA

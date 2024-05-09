@@ -4,7 +4,7 @@ import campoTextoCustomizadoStyle from "./CampoTextoCustomizadoStyle";
 
 const CampoTextoCustomizado = (props) => {
     return (
-        <View>
+        <View style={campoTextoCustomizadoStyle.container}>
             <Text>{props.label}</Text>
             <TextInput style={campoTextoCustomizadoStyle.campoTexto} {...props} />
         </View>
