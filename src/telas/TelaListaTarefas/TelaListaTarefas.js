@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { FlatList, SafeAreaView, View } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import ListagemVazia from '../../comum/componentes/ListagemVazia/ListagemVazia';
 import ItemTarefa from './ItemTarefa';
 import SeparadorListagens from './SeparadorListagem';
 import estilos from './TelaListaTarefasStyle';
 import CampoTextoCustomizado from '../../comum/componentes/CampoTextoCustomizado/CampoTextoCustomizado';
 import BotaoCustomizado from '../../comum/componentes/BotaoCustomizado/BotaoCustomizado';
-import { adicionarItemStorage, pegarItemStorage } from '../../comum/services/serviceStorage';
+import { atualizarItemStorage, pegarItemStorage, limparStorage } from '../../comum/services/serviceStorage';
 import { CHAVES_STORAGE } from '../../comum/constantes/chaves-storage';
 
 
@@ -20,7 +18,7 @@ const TelaListaTarefas = () => {
     const atualizarListagemDoStorage = async () => {
       const listagemDoStorage = await pegarItemStorage(CHAVES_STORAGE.LISTA_TAREFAS);
       if (listagemDoStorage) {
-        setListaTarefas(JSON.parse(listagemDoStorage));
+        setListaTarefas(listagemDoStorage);
       };
     };
 
@@ -35,17 +33,22 @@ const TelaListaTarefas = () => {
         const novaLista = [...listaTarefas, { descricao: campoDescricao, id: +new Date() }];
         setListaTarefas(novaLista);
         setCampoDescricao('');
-        
-        await adicionarItemStorage(CHAVES_STORAGE.LISTA_TAREFAS, novaLista);
-        
+
+        await atualizarItemStorage(CHAVES_STORAGE.LISTA_TAREFAS, novaLista);
+
       } else {
         alert('Campo descrição é obrigatório.');
       }
     } catch {
       console.log('Deu erro ao adicionar na lista de tarefas.');
     }
-    };
-    
+  };
+
+  const limparLista = () => {
+    setListaTarefas([]);
+    limparStorage(CHAVES_STORAGE.LISTA_TAREFAS);
+  };
+
   return (
     <SafeAreaView style={estilos.container}>
       <View style={estilos.containerCampoAdicionar}>
@@ -64,11 +67,16 @@ const TelaListaTarefas = () => {
 
       <FlatList
         data={listaTarefas}
-        renderItem={ItemTarefa}
+        // renderItem={ItemTarefa}
+        renderItem={(props) =>
+          <ItemTarefa {...props}
+            setListaTarefas={setListaTarefas}
+          />}
         ItemSeparatorComponent={SeparadorListagens}
         ListEmptyComponent={ListagemVazia}
         keyExtractor={(item) => item.id}
       />
+      <BotaoCustomizado onPress={limparLista}>Limpar Lista</BotaoCustomizado>
     </SafeAreaView>
   );
 };

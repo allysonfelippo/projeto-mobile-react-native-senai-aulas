@@ -4,9 +4,8 @@ import CORES from "../../constantes/cores";
 const campoTextoCustomizadoStyle = StyleSheet.create({
     
     container: {
-        flex: 1,
         width: '100%',
-        gap: 4
+        gap: 4,
     },
     campoTexto: {
         borderWidth: 1,

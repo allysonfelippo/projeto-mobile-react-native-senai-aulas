@@ -7,6 +7,7 @@ import TELAS from './src/comum/constantes/telas';
 import TelaPrincipal from './src/telas/TelaPrincipal/TelaPrincipal';
 import TelaFormulario from './src/telas/TelaFormulario/TelaFormulario';
 import TelaListaTarefas from './src/telas/TelaListaTarefas/TelaListaTarefas';
+import TelaLogin from './src/telas/TelaLogin/TelaLogin';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -28,11 +29,14 @@ export default function App() {
           <Stack.Screen
             name={TELAS.TELA_PRINCIPAL}
             component={TelaPrincipal}
-            options={{ title: 'Tela Principal' }}  
+            options={{ title: 'Tela Principal', headerLeft: null }}
           />
           <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} options={{ title: 'Tela Contador' }} />
           <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} options={{ title: 'Tela Formulário' }} />
           <Stack.Screen name={TELAS.TELA_LISTA} component={TelaListaTarefas} options={{ title: 'Lista de tarefas' }} />
+          <Stack.Group screenOptions={{ headerShown: false }}>
+            <Stack.Screen name={TELAS.TELA_LOGIN} component={TelaLogin} options={{ title: 'Tela Contador' }} />
+          </Stack.Group>
         </Stack.Navigator>
       </NavigationContainer>
 
