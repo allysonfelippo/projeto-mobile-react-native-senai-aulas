@@ -16,6 +16,8 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { pegarItemStorage } from './src/comum/services/serviceStorage';
+import TelaListagemUsuarios from './src/telas/TelaListagemUsuarios/TelaListagemUsuarios';
+import TelaDetalhesUsuario from './src/telas/TelaDetalhesUsuario/TelaDetalhesUsuario';
 
 const Stack = createStackNavigator();
 
@@ -60,6 +62,8 @@ export default function App() {
           <Stack.Screen name={TELAS.TELA_CONTADOR} component={TelaContador} options={{ title: 'Tela Contador' }} />
           <Stack.Screen name={TELAS.TELA_FORMULARIO} component={TelaFormulario} options={{ title: 'Tela Formulário' }} />
           <Stack.Screen name={TELAS.TELA_LISTA} component={TelaListaTarefas} options={{ title: 'Lista de tarefas' }} />
+          <Stack.Screen name={TELAS.TELA_LISTAGEM_USUARIOS} component={TelaListagemUsuarios} options={{ title: 'Listgem de usuários'  }} />
+          <Stack.Screen name={TELAS.TELA_DETALHES_USUARIO} component={TelaDetalhesUsuario} options={{ title: 'Perfil do usuário'  }} />
         </Stack.Navigator>
       </NavigationContainer>
 

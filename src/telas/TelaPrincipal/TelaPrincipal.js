@@ -15,6 +15,9 @@ const TelaPrincipal = (props) => {
             <BotaoCustomizado cor='primaria' onPress={() => props.navigation.navigate(TELAS.TELA_LISTA)}>
                 <Text>Lista de Tarefas</Text>
             </BotaoCustomizado>
+            <BotaoCustomizado cor='secundaria' onPress={() => props.navigation.navigate(TELAS.TELA_LISTAGEM_USUARIOS)}>
+                Lista de Usuários
+            </BotaoCustomizado>
         </View>
     )
 };
